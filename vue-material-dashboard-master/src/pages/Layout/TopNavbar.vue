@@ -1,150 +1,126 @@
 <template>
+<!-- <mdb-container> -->
 
- 
+<b-container fluid>
 
+    <b-navbar toggleable="lg" type="dark">
+        <b-navbar-brand href="#" style="color:#495057!important; font-size:18px;">
+            <h4>{{ $route.name }}</h4>
+        </b-navbar-brand>
 
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
+        <b-collapse id="nav-collapse" is-nav>
 
-    <!-- <mdb-container> -->
-        <mdb-navbar>
-          <mdb-navbar-brand class="heading">
-            <h3>{{ $route.name }}</h3>
-          </mdb-navbar-brand>
-          <mdb-navbar-toggler>
-            <mdb-navbar-nav right>
-              <form>
-                <mdb-input type="text" class="text-white" placeholder="Search" aria-label="Search" label navInput waves waves-fixed/>
-              </form>
-              <mdb-nav-item v-mdb-waves  href="#/"><mdb-icon v-mdb-waves class="icon" icon="th-large" size="lg" /></mdb-nav-item>
-                <mdb-nav-item v-mdb-waves  href="#/notifications"><mdb-icon class="icon"  icon="bell" size="lg" /></mdb-nav-item>
-               <mdb-nav-item v-mdb-waves  href="#/user"><mdb-icon class="icon" icon="user" size="lg" /></mdb-nav-item>
-            </mdb-navbar-nav>
-          </mdb-navbar-toggler>
-        </mdb-navbar>
-    <!-- </mdb-container> -->
+            <!-- Right aligned nav items -->
+            <b-navbar-nav class="ml-auto">
+                <b-nav-form class="icons">
+                    <b-form-input size="sm" class="mr-sm-2" placeholder="Search">
+                        <b-dropdown>
+                            <b-dropdown-item>yo</b-dropdown-item>
+                        </b-dropdown>
+                    </b-form-input>
+                </b-nav-form>
+                <b-nav-item class="icons" href="#/dashboard">
+                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
+                        dashboard
+                    </span>
+                </b-nav-item>
+                <b-nav-item class="icons">
+                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
+                        notifications
+                        <span class="notification">
+                            5
+                        </span>
+                    </span>
 
+                </b-nav-item>
+                <b-nav-item class="icons" href="#/user">
+                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
+                        person
+                    </span>
+                </b-nav-item>
+            </b-navbar-nav>
+        </b-collapse>
+    </b-navbar>
 
-
-
-  <!-- <mdb-toolbar md-elevation="0" class="md-transparent">
-    <div class="md-toolbar-row">
-      <div class="md-toolbar-section-start">
-        <h3 class="md-title">{{ $route.name }}</h3>
-      </div>
-      <div class="md-toolbar-section-end">
-        <md-button
-          class="md-just-icon md-simple md-toolbar-toggle"
-          :class="{ toggled: $sidebar.showSidebar }"
-          @click="toggleSidebar"
-        >
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </md-button>
-
-        <div class="md-collapse">
-          <div class="md-autocomplete">
-            <md-autocomplete
-              class="search"
-              v-model="selectedEmployee"
-              :md-options="employees"
-            >
-              <label>Search...</label>
-            </md-autocomplete>
-          </div>
-          <md-list>
-            <md-list-item href="#/">
-              <i class="material-icons">dashboard</i>
-              <p class="hidden-lg hidden-md">Dashboard</p>
-            </md-list-item>
-
-            <li class="md-list-item">
-              <a
-                href="#/notifications"
-                class="md-list-item-router md-list-item-container md-button-clean dropdown"
-              >
-                <div class="md-list-item-content">
-                  <drop-down>
-                    <md-button
-                      slot="title"
-                      class="md-button md-just-icon md-simple"
-                      data-toggle="dropdown"
-                    >
-                      <b-icon-bell-fill font-scale='0.9'>notifications</b-icon-bell-fill>   
-                      <span class="notification">5</span>
-                      <p class="hidden-lg hidden-md">Notifications</p>
-                    </md-button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a href="#">Mike John responded to your email</a></li>
-                      <li><a href="#">You have 5 new tasks</a></li>
-                      <li><a href="#">You're now friend with Andrew</a></li>
-                      <li><a href="#">Another Notification</a></li>
-                      <li><a href="#">Another One</a></li>
-                    </ul>
-                  </drop-down>
-                </div>
-              </a>
-            </li>
-
-            <md-list-item href="#/user">
-           <b-icon-person-fill font-scale='2'>person</b-icon-person-fill> 
-              <p class="hidden-lg hidden-md">Profile</p>
-            </md-list-item>
-          </md-list>
-        </div>
-      </div>
-    </div>
-  </mdb-toolbar> -->
+</b-container>
 </template>
 
 <script>
-
- import { mdbNavbar, mdbNavbarBrand,   mdbNavbarToggler, mdbIcon, mdbNavbarNav, mdbNavItem, mdbDropdown, mdbDropdownMenu,mdbWaves, mdbDropdownToggle, mdbInput, mdbDropdownItem } from 'mdbvue';
-  
 export default {
-  data() {
-    return {
-      selectedEmployee: null,
-      employees: [
-        "Jim Halpert",
-        "Dwight Schrute",
-        "Michael Scott",
-        "Pam Beesly",
-        "Angela Martin",
-        "Kelly Kapoor",
-        "Ryan Howard",
-        "Kevin Malone"
-      ]
-    };
-  },
-  methods: {
-    toggleSidebar() {
-      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
-    }
-  },
+    data() {
+        return {
+            selectedEmployee: null,
+            employees: [
+                "Jim Halpert",
+                "Dwight Schrute",
+                "Michael Scott",
+                "Pam Beesly",
+                "Angela Martin",
+                "Kelly Kapoor",
+                "Ryan Howard",
+                "Kevin Malone"
+            ]
+        };
+    },
+    methods: {
+        toggleSidebar() {
+            this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+        }
+    },
     name: 'TopNavbar',
     components: {
-      mdbNavbar,
-      mdbNavbarBrand,
-      mdbNavbarToggler,      
-       mdbIcon,
-      mdbNavbarNav,
-      mdbInput,
-      mdbNavItem
-     
 
-    },
-    directives:{
-      mdbWaves
     }
+
 };
 </script>
 
 <style lang="css">
-  .icon {
+/* .dashboard__icon {
+    background-color: "#000" !important;
+    color: "black" !important;
+} */
+
+/* .icon {
     color: #495057;
-  }
-  .h3{
+}*/
+.navbar {
+    /* padding: 0.625 rem;
+    height: 3.125rem; */
+    min-height: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.notification {
+    position: absolute;
+    top: -6px;
+    border: 1px solid #fff;
+    right: -7px;
+    font-size: 5px !important;
+    background: #f44336;
+    color: #fff !important;
+    z-index: 1;
+    min-width: 10px;
+    padding: 0 5px;
+    height: 15px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 19px;
+
+    display: block;
+}
+
+.icons {
+    padding: 9px;
+    border-radius: 3px
+}
+
+/*
+.h3 {
     color: #495057
-  }
+} */
 </style>
+_icon

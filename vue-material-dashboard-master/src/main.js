@@ -18,8 +18,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-vue/dist/bootstrap-vue.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap-vue/dist/bootstrap-vue.css"
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // router setup
 import routes from "./routes/routes"; 
