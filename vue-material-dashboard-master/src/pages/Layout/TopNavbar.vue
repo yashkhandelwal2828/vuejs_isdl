@@ -15,11 +15,11 @@
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
                 <b-nav-form class="icons">
-                    <b-form-input size="sm" class="mr-sm-2" placeholder="Search">
-                        <b-dropdown>
-                            <b-dropdown-item>yo</b-dropdown-item>
-                        </b-dropdown>
+                    <b-form-input list="my-list-id" size="sm" class="mr-sm-2" placeholder="Search">
                     </b-form-input>
+                    <datalist id="my-list-id">
+                        <option :key="employee" v-for="employee in employees">{{ employee }}</option>
+                    </datalist>
                 </b-nav-form>
                 <b-nav-item class="icons" href="#/dashboard">
                     <span class="material-icons" style="color:#495057!important; font-size:20px;">
@@ -29,16 +29,19 @@
                 <b-nav-item class="icons">
                     <span class="material-icons" style="color:#495057!important; font-size:20px;">
                         notifications
-                        <span class="notification">
+                        <span class="notification-number">
                             5
                         </span>
                     </span>
 
                 </b-nav-item>
                 <b-nav-item class="icons" href="#/user">
-                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
+                    <span class="material-icons" list="my-list-id" style="color:#495057!important; font-size:20px;">
                         person
                     </span>
+                    <datalist id="my-list-id">
+                        <option :key="employee" v-for="employee in employees">{{ employee }}</option>
+                    </datalist>
                 </b-nav-item>
             </b-navbar-nav>
         </b-collapse>
@@ -51,7 +54,7 @@
 export default {
     data() {
         return {
-            selectedEmployee: null,
+            // selectedEmployee: null,
             employees: [
                 "Jim Halpert",
                 "Dwight Schrute",
@@ -94,7 +97,7 @@ export default {
     padding-right: 15px;
 }
 
-.notification {
+.notification-number {
     position: absolute;
     top: -6px;
     border: 1px solid #fff;

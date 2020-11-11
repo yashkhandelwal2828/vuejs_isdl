@@ -15,8 +15,14 @@
             Owens’ bed design but the back is...
         </b-card-text>
     </b-card-body>
-    <b-card-body class="mx-auto">
-        <b-button center href="#" variant="success" style="color:white; border-radius:999px; padding:12px 30px;">FOLLOW</b-button>
+
+    <b-card-body center v-b-hover="handleHover" class="position-absolute" style="padding-left:5.75rem; padding-top:0rem;">
+        <b-button v-if="isHovered" size="sm" pill href="#" variant="success" style="background-color:#4caf50 !important; color:white !important; padding:12px 25px;">
+            <p>FOLLOW</p>
+        </b-button>
+        <b-button v-else size="sm" pill href="#" variant="success" style="background-color:#4caf50 !important; color:white !important; padding:12px 25px; ">
+            <p>FOLLOW</p>
+        </b-button>
     </b-card-body>
 
 </b-card>
@@ -39,6 +45,11 @@ export default {
                 center: true,
             }
         };
+    },
+    methods: {
+        handleHover(hovered) {
+            this.isHovered = hovered
+        }
     }
 };
 </script>
