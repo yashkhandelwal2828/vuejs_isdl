@@ -22,23 +22,45 @@
                     </datalist>
                 </b-nav-form>
                 <b-nav-item class="icons" href="#/dashboard">
-                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
+                    <!-- <span class="material-icons" animation="fade" style="color:#495057!important; font-size:20px;">
                         dashboard
-                    </span>
+                    </span> -->
+                    <b-icon variant="dark" icon="columns-gap"></b-icon>
                 </b-nav-item>
-                <b-nav-item class="icons">
-                    <span class="material-icons" style="color:#495057!important; font-size:20px;">
-                        notifications
+                <!-- <b-nav-item class="icons" href="#/notifications">
                         <span class="notification-number">
                             5
                         </span>
-                    </span>
+                    <b-icon variant="dark" icon="bell-fill"></b-icon>
+
 
                 </b-nav-item>
+                    <b-dropdown-item href="#">Action</b-dropdown-item>
+                    <b-dropdown-item href="#">Another action</b-dropdown-item>
+                    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+              </b-dropdown> -->
+
+                <b-nav-item class="px-0 py-0 icons"  href="#/notifications">
+                        <!-- <template #button-content  href="#/notifications"> -->
+                    <b-dropdown size="md"  variant="link" toggle-class="text-decoration-none" no-caret>
+                        <template #button-content href="#/notifications"> 
+                                <b-icon href="#/notifications" variant="dark" icon="bell-fill"></b-icon>
+                        </template>
+                            <b-dropdown-item href="#">Action</b-dropdown-item>
+                            <b-dropdown-item href="#">Another action</b-dropdown-item>
+                            <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+                    </b-dropdown>
+                </b-nav-item>
+                
+<!--              
+                    </b-dropdown> -->
                 <b-nav-item class="icons" href="#/user">
-                    <span class="material-icons" list="my-list-id" style="color:#495057!important; font-size:20px;">
+
+                    <b-icon variant="dark" icon="person-fill"></b-icon>
+
+                    <!-- <span class="material-icons" list="my-list-id" style="color:#495057!important; font-size:20px;">
                         person
-                    </span>
+                    </span> -->
                     <datalist id="my-list-id">
                         <option :key="employee" v-for="employee in employees">{{ employee }}</option>
                     </datalist>
@@ -70,6 +92,9 @@ export default {
     methods: {
         toggleSidebar() {
             this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+        },
+        iconClick(){
+            
         }
     },
     name: 'TopNavbar',
@@ -98,21 +123,20 @@ export default {
 }
 
 .notification-number {
-    position: absolute;
-    top: -6px;
+       position: absolute;
+    top: 21px;
     border: 1px solid #fff;
-    right: -7px;
-    font-size: 5px !important;
+    right: 78px;
+    font-size: 10px !important;
     background: #f44336;
     color: #fff !important;
     z-index: 1;
     min-width: 10px;
     padding: 0 5px;
-    height: 15px;
-    border-radius: 12px;
+    /* height: 15px; */
+    border-radius: 50px;
     text-align: center;
-    line-height: 19px;
-
+    line-height: 15px;
     display: block;
 }
 

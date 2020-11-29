@@ -16,7 +16,7 @@
         </b-card-text>
     </b-card-body>
 
-    <b-card-body center v-b-hover="handleHover" class="position-absolute" style="padding-left:5.75rem; padding-top:0rem;">
+    <b-card-body  class="text-center" center v-b-hover="handleHover" >
         <b-button v-if="isHovered" size="sm" pill href="#" variant="success" style="background-color:#4caf50 !important; color:white !important; padding:12px 25px;">
             <p>FOLLOW</p>
         </b-button>

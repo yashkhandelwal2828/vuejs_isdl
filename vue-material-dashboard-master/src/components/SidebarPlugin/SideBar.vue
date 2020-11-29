@@ -13,7 +13,7 @@
     </div>
     <div class="sidebar-wrapper">
         <slot name="content"></slot>
-        <md-list class="nav">
+        <b-list-group class="nav">
             <!-- <b-list-group> -->
             <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
             <slot>
@@ -21,7 +21,7 @@
                 </sidebar-link>
             </slot>
             <!-- </b-list-group> -->
-        </md-list>
+        </b-list-group>
     </div>
 </div>
 </template>
@@ -36,7 +36,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: "Vue MD"
+            default: "Bootstrap-Vue"
         },
         sidebarBackgroundImage: {
             type: String,
@@ -44,13 +44,17 @@ export default {
         },
         imgLogo: {
             type: String,
-            default: require("@/assets/img/vue-logo.png")
+            default: require("@/assets/img/logo.png")
+    
         },
         sidebarItemColor: {
             type: String,
             default: "green",
             validator: value => {
+                
                 let acceptedValues = ["", "purple", "blue", "green", "orange", "red"];
+                // console.log(acceptedValues.indexOf(value) !== -1;)
+                 
                 return acceptedValues.indexOf(value) !== -1;
             }
         },
@@ -83,5 +87,9 @@ export default {
     .nav-mobile-menu {
         display: none;
     }
+    sidebar-link{
+        text-align: left;
+    }
+    
 }
 </style>
