@@ -21,13 +21,15 @@
                         <option :key="employee" v-for="employee in employees">{{ employee }}</option>
                     </datalist>
                 </b-nav-form>
-                <b-nav-item class="icons" href="#/dashboard">
-                    <!-- <span class="material-icons" animation="fade" style="color:#495057!important; font-size:20px;">
+                 <!-- <mdb-nav-item v-mdb-waves  href="#/"><mdb-icon v-mdb-waves class="icon" icon="th-large" size="lg" /></mdb-nav-item> -->
+                <b-nav-item class="icons" href="#/dashboard"> 
+                    <span class="material-icons" animation="fade" style="color:#495057!important; font-size:20px;">
                         dashboard
-                    </span> -->
-                    <b-icon variant="dark" icon="columns-gap"></b-icon>
-                </b-nav-item>
-                <!-- <b-nav-item class="icons" href="#/notifications">
+                    </span>
+                    <!-- <b-icon variant="dark" icon="columns-gap"></b-icon>  -->
+                     <!-- <mdb-icon v-mdb-waves class="icon" icon="th-large" size="lg" /> -->
+                 </b-nav-item> 
+                <b-nav-item class="icons" href="#/notifications">
                         <span class="notification-number">
                             5
                         </span>
@@ -35,14 +37,14 @@
 
 
                 </b-nav-item>
-                    <b-dropdown-item href="#">Action</b-dropdown-item>
+                    <!-- <b-dropdown-item href="#">Action</b-dropdown-item>
                     <b-dropdown-item href="#">Another action</b-dropdown-item>
                     <b-dropdown-item href="#">Something else here...</b-dropdown-item>
               </b-dropdown> -->
 
-                <b-nav-item class="px-0 py-0 icons"  href="#/notifications">
+                <!-- <b-nav-item class="px-0 py-0 icons"  href="#/notifications"> -->
                         <!-- <template #button-content  href="#/notifications"> -->
-                    <b-dropdown size="md"  variant="link" toggle-class="text-decoration-none" no-caret>
+                    <!-- <b-dropdown size="md"  variant="link" toggle-class="text-decoration-none" no-caret>
                         <template #button-content href="#/notifications"> 
                                 <b-icon href="#/notifications" variant="dark" icon="bell-fill"></b-icon>
                         </template>
@@ -50,7 +52,7 @@
                             <b-dropdown-item href="#">Another action</b-dropdown-item>
                             <b-dropdown-item href="#">Something else here...</b-dropdown-item>
                     </b-dropdown>
-                </b-nav-item>
+                </b-nav-item> -->
                 
 <!--              
                     </b-dropdown> -->
